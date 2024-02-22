@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+/* Navbar starts */
+nav {
+  background-color: red;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+
+.nav-center {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-center h3,
+.nav-container svg {
+  color: #fff;
+  fill: #fff;
+}
+
+.nav-container {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.amount-container {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.amount-container .cart-total {
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: #fff;
+  margin-top: 2px;
+}
+/* Navbar ends */
+/* Cart-container starts */
+.cart {
+  background-image: url("../public/assets/roberto-cortese-F1I4IN86NiE-unsplash.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.881));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  padding-bottom: 30px;
+  min-height: calc(100vh - 62px);
+}
+
+.cart-header {
+  text-align: center;
+  padding-block: 50px;
+  font-size: 2.5rem;
+  color: blue;
+  text-transform: uppercase;
+}
+
+.cart .cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid aqua;
+  font-size: 1.2rem;
+  color: #fff;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cart .cart-total span {
+  letter-spacing: 0.5rem;
+  font-weight: bold;
+}
+
+.clear-btn {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: red;
+  background-color: rgba(255, 0, 0, 0.45);
+  font-weight: bold;
+  padding: 10px;
+  width: 180px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin: 40px auto;
+}
+
+.clear-btn:hover {
+  background-color: rgba(172, 4, 4, 0.45);
+}
+
+.empty-cart,
+.error-message {
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+/* Cart-container ends */
+/* Cart-item starts */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.cart-item img {
+  object-fit: contain;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.cart-item-details {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  font-size: 1.3rem;
+}
+
+.item-name {
+  color: blue;
+}
+
+.item-price {
+  color: green;
+  letter-spacing: 0.2rem;
+  margin-block: 10px;
+}
+
+.remove-btn {
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  width: 100px;
+  height: 20px;
+  background-color: red;
+}
+
+.remove-btn:hover {
+  background-color: rgb(183, 6, 6);
+}
+
+.cart-amount-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.amount-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.amount-btn svg {
+  width: 35px;
+  fill: red;
+}
+
+.amount-btn svg:hover {
+  fill: rgb(176, 7, 7);
+}
+
+.amount {
+  color: blue;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+/* Cart-item ends */
+/* Loader starts */
+.loading,
+.error-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 62px);
+  overflow: hidden;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px dotted blue;
+  border-style: solid solid dotted dotted;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px dotted #ff3d00;
+  border-style: solid solid dotted;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+/* Loader ends */
